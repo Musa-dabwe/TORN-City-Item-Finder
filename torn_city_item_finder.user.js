@@ -2,7 +2,7 @@
 // @name         Torn City Item Finder
 // @version      1.0
 // @description  Detects and highlights items on the Torn city map, showing total value and allowing filtering.
-// @author       Jules (Original by tos)
+// @author       Zedtrooper [3028329] (Original by tos)
 // @match        *.torn.com/city.php*
 // @grant        GM_addStyle
 // @grant        GM_setValue
