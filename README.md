@@ -21,7 +21,7 @@ This userscript is a rebuilt and enhanced version of the original "City Finds" s
 
 ## Credits
 
-Rebuilt and enhanced by Jules.
+Rebuilt and enhanced by Zedtrooper [3028329].
 **Original Author:** tos
 
 ## Safety Note
