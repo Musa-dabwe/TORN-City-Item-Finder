@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+            <html style="background-color: #191919" class="">
+            <head>
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="512x512" href="/favicon/torn/512x512.png">
+        <link rel="icon" type="image/png" sizes="300x300" href="/favicon/torn/300x300.png">
+        <link rel="icon" type="image/png" sizes="180x180" href="/favicon/torn/180x180.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="/favicon/torn/96x96.png">
+        <link rel="icon" type="image/png" sizes="64x64" href="/favicon/torn/64x64.png">
+        <link rel="icon" type="image/png" sizes="48x48" href="/favicon/torn/48x48.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon/torn/32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon/torn/16x16.png">
+        <link rel="apple-touch-icon" href="/favicon/torn/180x180.png">
+    <meta charset="ISO-8859-1" /><meta name="viewport" content="width=device-width, initial-scale = 1.0, minimum-scale = 1.0, maximum-scale=1, viewport-fit=cover" /><meta property="og:image" content="https://torn.com/images/social/social.png" /><meta property="og:url" content="https://www.torn.com" /><meta name="twitter:card" content="summary" /><noscript id="serverTimestamp" data-timestamp=1772373410></noscript><meta name='sentry-trace' content='fd418328fdc74cabbc5757778d228eaa-c1058c47890e4f6e-0'><meta name='baggage' content='sentry-trace_id=fd418328fdc74cabbc5757778d228eaa,sentry-sample_rate=0.00025,sentry-transaction=%2Fcity.php,sentry-public_key=a78f3131e2934d6dbfe3e3d4acea7ee4,sentry-release=torn%40cab57a4dc1eb47d56635201449fd844ed002636d,sentry-environment=production,sentry-sampled=false,sentry-sample_rand=0.574107'><script type="text/javascript" src="/js/debug/sentry-10.11.0.min.js?v=1757687760"></script>
+<script server_name="www.torn.com@www12" release="react-apps@1c03c8b2ab7f7063c8633e8ff043cb3fe354dffa" environment="production" playerId="3028329" playerName="Zedtrooper" type="text/javascript" src="/js/debug/mon.js?v=1761705660"></script>
+<meta name="apple-mobile-web-app-title" content="Torn"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#2d2c2c"><meta name="theme-color" content="#2d2c2c"><link rel="manifest" href="/manifest.json"><script type="text/javascript" src="/js/script/lib/polyfill.min.js?v=1744749000"></script>
+<script src="/builds/react-umd/react-dom.19.2.0.6afd405a.production.js"></script><title>City | TORN</title><meta property="og:title" content="City | TORN" /><meta name="description" content="Play Torn.com - the world's largest text based multiplayer RPG game on your Desktop, Phone or Tablet device." /><meta property="og:description" content="Play Torn.com - the world's largest text based multiplayer RPG game on your Desktop, Phone or Tablet device." />
+<input id='torn-user' type='hidden' value='{"id":"3028329","playername":"Zedtrooper","avatar":"https:\/\/avatars.torn.com\/48X48_c70270d9-889f-45f0-af33-eb1240436b81-3028329.png","role":"Civilian"}' />
+
+<script
+  type="text/javascript"
+  src="/builds/core/runtime.27ac79f55ce731eccdea.js"
+></script>
+
+<script
+  type="text/javascript"
+  src="/builds/core/vendors.d19b3f3d5d631a534cfb.js"
+></script>
+
+<script
+  type="text/javascript"
+  src="/builds/core/app.298f88022599ff69676b.js"
+></script>
+
+<link type="text/css" rel="stylesheet" href="/css/style/reset.css?v=1744748940"/>
+<link type="text/css" rel="stylesheet" href="/css/style/light_mode/vars.css?v=1768834440"/>
+<link type="text/css" rel="stylesheet" href="/css/style/dark_mode/vars.css?v=1768834440"/>
+<link type="text/css" rel="stylesheet" href="/css/style/light_mode/bbc.css?v=1744748940"/>
+<link type="text/css" rel="stylesheet" href="/css/style/light_mode/profile.css?v=1765968480"/>
+<link type="text/css" rel="stylesheet" href="/css/base.css?v=1744748940"/>
+<link type="text/css" rel="stylesheet" href="/css/style/header.css?v=1750079760"/>
+<link type="text/css" rel="stylesheet" href="/css/style/main.css?v=1765897680"/>
+<link type="text/css" rel="stylesheet" href="/css/style/menu.css?v=1758721620"/>
+<link type="text/css" rel="stylesheet" href="/css/style/icon.css?v=1771324080"/>
+<link type="text/css" rel="stylesheet" href="/css/style/scrollbar.css?v=1749714420"/>
+<link type="text/css" rel="stylesheet" href="/css/style/footer.css?v=1744748940"/>
+<link type="text/css" rel="stylesheet" href="/css/style/lib/jquery.ui.selectmenu.css?v=1744748940"/>
+<link type="text/css" rel="stylesheet" href="/css/style/lib/bbc-editor-styles.css?v=1744748940"/>
+<link type="text/css" rel="stylesheet" href="/css/style/editor/editor-content.css?v=1772208300"/>
+<link type="text/css" rel="stylesheet" href="/css/style/lib/jquery.scrollbar.css?v=1744748940"/>
+<link type="text/css" rel="stylesheet" href="/css/style/lib/prettyCheckable.css?v=1744748940"/>
+<link type="text/css" rel="stylesheet" href="/css/style/errors/errors.css?v=1744748940"/>
+<link type="text/css" rel="stylesheet" href="/css/style/lib/tornInputMoney.css?v=1744748940"/>
+<link type="text/css" rel="stylesheet" href="/css/style/wai.css?v=1744748940"/>
+<link type="text/css" rel="stylesheet" href="/css/style/checkbox_radio.css?v=1744748940"/>
+<link type="text/css" rel="stylesheet" href="/css/style/buttons.css?v=1744748940"/>
+<link type="text/css" rel="stylesheet" href="/css/style/buttons_compatibility.css?v=1744748940"/>
+<link type="text/css" rel="stylesheet" href="/css/style/dropdown.css?v=1744748940"/>
+<link type="text/css" rel="stylesheet" href="/css/style/dark_mode/main.css?v=1756284480"/>
+<link type="text/css" rel="stylesheet" href="/css/style/dark_mode/bbc.css?v=1744748940"/>
+<link type="text/css" rel="stylesheet" href="/css/style/dark_mode/profile.css?v=1765968480"/>
+<script type="text/javascript" src="/js/script/lib/jquery-1.8.2.js?v=1744749000"></script>
+<script type="text/javascript" src="/js/script/lib/jquery.ui.widget.js?v=1744749000"></script>
+<script type="text/javascript" src="/js/script/lib/jquery.ui.position.js?v=1744749000"></script>
+<script type="text/javascript" src="/js/script/lib/jquery.ui.selectmenu.js?v=1744749000"></script>
+<script type="text/javascript" src="/js/script/lib/jquery.tinyscrollbar.js?v=1744749000"></script>
+<script type="text/javascript" src="/js/script/lib/jquery-ui-1.9.1.custom.min.js?v=1744749000"></script>
+<script type="text/javascript" src="/js/script/lib/prettyCheckable.js?v=1744749000"></script>
+<script type="text/javascript" src="/js/script/lib/jquery.cookie.js?v=1744749000"></script>
+<script type="text/javascript" src="/js/script/src/ajaxHelpers.js?v=1744749000"></script>
+<script type="text/javascript" src="/js/base.js?v=1771524300"></script>
+<script type="text/javascript" src="/js/script/lib/custom/jquery.countdown.js?v=1744749000"></script>
+<script type="text/javascript" src="/js/script/lib/signals.js?v=1744749000"></script>
+<script type="text/javascript" src="/js/script/lib/hasher.js?v=1744749000"></script>
+<script type="text/javascript" src="/js/script/src/common.js?v=1769424540"></script>
+<script type="text/javascript" src="/js/script/src/responsive.js?v=1744749000"></script>
+<script type="text/javascript" src="/js/script/util/tutorialSwitcher.js?v=1744749000"></script>
+<script type="text/javascript" src="/js/script/lib/custom/tornInputMoney.js?v=1772049420"></script>
+<script type="text/javascript" src="/js/chat/gonline.js?v=1744749000"></script>
+<script type="text/javascript" src="/js/script/lib/centrifuge.min.js?v=1744749000"></script>
+<script type="text/javascript" src="/js/script/src/websocket_handlers/common_handler.js?v=1769424540"></script>
+<script type="text/javascript" src="/js/script/src/backdrops.js?v=1744749000"></script>
+<script type="text/javascript" src="/js/script/src/maxScaleWatcher.js?v=1744749000"></script>
+<script type="text/javascript" src="/js/script/src/profile-mini.js?v=1744749000"></script>
+<script type="text/javascript" src="/js/script/src/bhc/index.js?v=1763131500"></script>
+<script async defer type="text/javascript" src="https://accounts.google.com/gsi/client"></script>
+
+<script type="text/javascript" src="/builds/leave-site-alert/runtime.dd45a79043ac9ac6bc81.js"></script>
+
+<script type="text/javascript" src="/builds/leave-site-alert/app.07e6f2d53a2f205907db.js"></script>
+
+<link type="text/css" rel="stylesheet" href="/css/style/city.css?v=1744748940"/>
+<link type="text/css" rel="stylesheet" href="/css/style/switcher.css?v=1744748940"/>
+<link type="text/css" rel="stylesheet" href="/css/citymap/style.css?v=1744748940"/>
+<link type="text/css" rel="stylesheet" href="/css/citymap/openlayers_style.css?v=1744748940"/>
+<link type="text/css" rel="stylesheet" href="/css/style/city/city.territory.concat.css?v=1765903740"/>
+<script type="text/javascript" src="/js/script/src/city.js?v=1744749000"></script>
+<script type="text/javascript" src="/js/script/lib/leaflet-0.7.7/leaflet.js?v=1744749000"></script>
+<script type="text/javascript" src="/js/script/lib/d3-3.5.14/d3.min.js?v=1744749000"></script>
+<script type="text/javascript" src="/js/script/lib/raphael.js?v=1744749000"></script>
+<script type="text/javascript" src="/js/script/lib/base64.js?v=1744749000"></script>
+<script type="text/javascript" src="/js/script/lib/rrose-src.js?v=1744749000"></script>
+<script type="text/javascript" src="/js/script/src/city_global/libs/ZeroClipboard.js?v=1744749000"></script>
+<script type="text/javascript" src="/js/script/src/city_global/static_data/city_standard_shapes.js?v=1748264520"></script>
+<script type="text/javascript" src="/js/script/src/city_global/static_data/city_territories_neighbors_shapes.js?v=1759141320"></script>
+<script type="text/javascript" src="/js/script/src/city_global/tc.config.js?v=1744749000"></script>
+<script type="text/javascript" src="/js/script/src/city_global/tc.helper.js?v=1744749000"></script>
+<script type="text/javascript" src="/js/script/src/city_global/tc.class/tc.leaflet.custom.js?v=1765903740"></script>
+<script type="text/javascript" src="/js/script/src/city_global/tc.class/tc.Map.js?v=1769078100"></script>
+<script type="text/javascript" src="/js/script/src/city_global/tc.class/tc.Shape.js?v=1765903740"></script>
+<script type="text/javascript" src="/js/script/src/city_global/tc.class/tc.small.classes.js?v=1744749000"></script>
+<script type="text/javascript" src="/js/script/src/city_global/tc.class/tc.Model.js?v=1765903740"></script>
+<script type="text/javascript" src="/js/script/src/city_global/tc.class/tc.View.js?v=1766485380"></script>
+<script type="text/javascript" src="/js/script/src/city_global/tc.class/tc.Controller.js?v=1768558440"></script>
+<script type="text/javascript" src="/js/script/lib/handlebars-1.0.rc.1.min.js?v=1744749000"></script>
+<script type="text/javascript" src="/js/script/util/handlebarsHelpers.js?v=1765897680"></script>
+<script type="text/javascript" src="/js/templates.js?v=1768558440"></script>
+<script type="text/javascript" src="/js/script/src/city_global/tc.init.js?v=1765903740"></script>
+<link type="text/css" rel="stylesheet" href="/css/style/colors/regular.css?v=1768834440"/>
+
+    </head>
+         <body style="background: #191919 none;" 
+            id="body"
+            class="d body r regular with-sidebar dark-mode"
+            data-layout="regular"
+            data-country="torn"
+            data-celebration="none"
+            data-traveling="false"
+            data-abroad="false"
+            data-dark-mode-logo="regular"
+            data-page=""
+        >
+    
+            <div class="svgs_defs_container">
+                <svg class='top_header_svgs_defs' xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute">
+    <defs class="top_header_filters">
+        <filter id="top_header_svg_filter__regular" x="0" y="0" width="30" height="30" filterUnits="userSpaceOnUse">
+            <feOffset dy="1" input="SourceAlpha"/>
+            <feGaussianBlur stdDeviation="2" result="blur"/>
+            <feFlood flood-opacity="0.6"/>
+            <feComposite operator="in" in2="blur"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+        <filter id="top_header_svg_filter__regular___hover" x="0" y="0" width="30" height="30"
+                filterUnits="userSpaceOnUse">
+            <feOffset input="SourceAlpha"/>
+            <feGaussianBlur stdDeviation="1.5" result="blur"/>
+            <feFlood flood-color="#fff" flood-opacity="0.251"/>
+            <feComposite operator="in" in2="blur"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+        <filter id="top_header_svg_filter__hospital" x="0" y="0" width="30" height="30" filterUnits="userSpaceOnUse">
+            <feOffset dy="1" input="SourceAlpha"/>
+            <feGaussianBlur stdDeviation="2" result="blur"/>
+            <feFlood flood-opacity="0.6"/>
+            <feComposite operator="in" in2="blur"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+        <filter id="top_header_svg_filter__hospital___hover" x="0" y="0" width="30" height="30"
+                filterUnits="userSpaceOnUse">
+            <feOffset input="SourceAlpha"/>
+            <feGaussianBlur stdDeviation="2" result="blur"/>
+            <feFlood flood-color="#fff" flood-opacity="0.251"/>
+            <feComposite operator="in" in2="blur"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+        <filter id="top_header_svg_filter__jail" x="0" y="0" width="30" height="30" filterUnits="userSpaceOnUse">
+            <feOffset dy="1" input="SourceAlpha"/>
+            <feGaussianBlur stdDeviation="2" result="blur"/>
+            <feFlood flood-opacity="0.4"/>
+            <feComposite operator="in" in2="blur"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+        <filter id="top_header_svg_filter__jail___hover" x="0" y="0" width="30" height="30"
+                filterUnits="userSpaceOnUse">
+            <feOffset input="SourceAlpha"/>
+            <feGaussianBlur stdDeviation="1.5" result="blur"/>
+            <feFlood flood-color="#fff" flood-opacity="0.251"/>
+            <feComposite operator="in" in2="blur"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+        <filter id="top_header_svg_filter__federal" x="0" y="0" width="30" height="30" filterUnits="userSpaceOnUse">
+            <feOffset dy="1" input="SourceAlpha"/>
+            <feGaussianBlur stdDeviation="2" result="blur"/>
+            <feFlood flood-opacity="0.4"/>
+            <feComposite operator="in" in2="blur"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+        <filter id="top_header_svg_filter__federal___hover" x="0" y="0" width="30" height="30"
+                filterUnits="userSpaceOnUse">
+            <feOffset dy="1" input="SourceAlpha"/>
+            <feGaussianBlur stdDeviation="2" result="blur"/>
+            <feFlood flood-opacity="0.4"/>
+            <feComposite operator="in" in2="blur"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+        <filter id="top_header_svg_filter_menu_icons" x="0" y="0" width="30" height="30"
+                filterUnits="userSpaceOnUse">
+            <feOffset input="SourceAlpha"/>
+            <feGaussianBlur stdDeviation="1" result="c"/>
+            <feFlood flood-opacity="0.451"/>
+            <feComposite operator="in" in2="c"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+    </defs>
+    <defs class="top_header_gradients">
+        <linearGradient id="top_header_svg_gradient__regular" x1="0.5" y1="1" x2="0.5"
+                        gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#666"/>
+            <stop offset="1" stop-color="#888"/>
+        </linearGradient>
+        <linearGradient id="top_header_svg_gradient__regular___hover" x1="0.5" y1="1" x2="0.5"
+                        gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#999"/>
+            <stop offset="1" stop-color="#ccc"/>
+        </linearGradient>
+        <linearGradient id="top_header_svg_gradient__hospital" x1="0.5" y1="1" x2="0.5"
+                        gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#aaa"/>
+            <stop offset="1" stop-color="#ddd"/>
+        </linearGradient>
+        <linearGradient id="top_header_svg_gradient__hospital___hover" x1="0.5" y1="1" x2="0.5"
+                        gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#aaa"/>
+            <stop offset="1" stop-color="#fff"/>
+        </linearGradient>
+        <linearGradient id="top_header_svg_gradient__jail" x1="0.5" y1="1" x2="0.5" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#79796a"/>
+            <stop offset="1" stop-color="#acac9d"/>
+        </linearGradient>
+        <linearGradient id="top_header_svg_gradient__jail___hover" x1="0.5" y1="1" x2="0.5"
+                        gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#acac9d"/>
+            <stop offset="1" stop-color="#dfdfd0"/>
+        </linearGradient>
+        <linearGradient id="top_header_svg_gradient__federal" x1="0.5" y1="1" x2="0.5"
+                        gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#9c6543"/>
+            <stop offset="1" stop-color="#c59776"/>
+        </linearGradient>
+        <linearGradient id="top_header_svg_gradient__federal___hover" x1="0.5" y1="1" x2="0.5"
+                        gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#c59776"/>
+            <stop offset="1" stop-color="#f4bd98"/>
+        </linearGradient>
+        <linearGradient id="top_header_svg_gradient__abroad" x1="0.5" y1="1" x2="0.5" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#5f7f9f"/>
+            <stop offset="1" stop-color="#8fa6bc"/>
+        </linearGradient>
+        <linearGradient id="top_header_svg_gradient__abroad___hover" x1="0.5" y1="1" x2="0.5"
+                        gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#8fa6bc"/>
+            <stop offset="1" stop-color="#fff"/>
+        </linearGradient>
+    </defs>
+</svg>
+
+                <svg class="react_svgs_defs" xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute">
+    <defs class="react_svgs__filters">
+        <filter id="global_star__shadow">
+            <feDropShadow dx="0" dy="0.9" stdDeviation="0.5" flood-color="#000"></feDropShadow>
+        </filter>
+    </defs>
+    <defs class="react_svgs__gradients"></defs>
+</svg>
+
+            </div>
+    
+    <div class="backdrops-container">      
+        <div class="custom-bg-desktop "></div>
+        <div class="custom-bg-mobile "></div>
+        <style type="text/css">
+            .d .backdrops-container .custom-bg-desktop {
+                background-image: none            } 
+            .d .backdrops-container .custom-bg-mobile {
+                background-image: none            } 
+            .d.dark-mode .backdrops-container .custom-bg-desktop {
+                background-image: none            }
+            .d.dark-mode .backdrops-container .custom-bg-mobile {
+                background-image: none            }
+        </style>
+    </div>
+<input id='chat-beta-testing' type='hidden' /><div id="chatRoot"></div>
+
+<link href="/builds/chat/vendors.4c6c8d98eb577ffae8c3.css" rel="stylesheet" />
+
+<link href="/builds/chat/app.05c32aad18d8de227558.css" rel="stylesheet" />
+
+<script
+  data-id="chat-script"
+  type="text/javascript"
+  src="/builds/chat/runtime.6634980ba529464587f2.js"
+></script>
+
+<script
+  data-id="chat-script"
+  type="text/javascript"
+  src="/builds/chat/vendors.f0b435ff425370859eb3.js"
+></script>
+
+<script
+  data-id="chat-script"
+  type="text/javascript"
+  src="/builds/chat/app.20d91ab77d4a81edd8f2.js"
+></script>
+
+
+        <a href="#skip-to-content" class="wai">Skip to content</a>
+        <a href="#skip-to-sidebar" class="wai">Skip to navigation menu</a>
+        
+<script nonce='NGJhNmM0ZmQwOWI5MWYxYmY5NzBhZTdjNGYwNjYyMGRmZGY5NDM4NWQ1ZGRiMmE5ZThiZGI4NTJiZjEyMWJkZA=='>window.topBannerInitData  = {"user":{"state":{"status":"ok","isLoggedIn":true,"isDonator":false,"isTravelling":false,"isAbroad":false,"isRecaptcha":false},"data":{"hospitalStamp":1772319208,"jailStamp":1771854418,"logoutHash":"dbc6f21e8f4e3c24d4edbbc1eba4d3e4","userID":3028329,"avatar":{"isDefault":false,"link":"https:\/\/avatars.torn.com\/48X48_c70270d9-889f-45f0-af33-eb1240436b81-3028329.png"}}},"serverState":{"serverName":"www12","currentTime":1772373410},"settings":{"emptyHeader":false,"emptyLinks":false,"hideActivityLog":false,"hideAdvancedSearch":false,"hideSettingsDropdown":false,"hideGlobalSearch":false,"hasAccessToDarkMode":true},"logo":{"name":"","title":"","country":"torn","darkModeLogo":"regular","additionalData":[]},"links":[{"name":"Wiki","link":"\/wiki\/City","icon":"Wiki","inNewTab":true},{"name":"Rules","link":"\/rules.php","icon":"Rules","inNewTab":false},{"name":"Forums","link":"\/forums.php","icon":"Forums","inNewTab":false},{"name":"Discord","link":"\/discord","icon":"Discord","inNewTab":true},{"name":"Staff","link":"\/staff.php","icon":"Staff","inNewTab":false},{"name":"Credits","link":"\/credits.php","icon":"Credits","inNewTab":false}],"globalSearch":{"optionsList":[{"id":"player","name":"User"},{"id":"faction","name":"Faction"},{"id":"company","name":"Company"},{"id":"places","name":"Areas"},{"id":"imarket","name":"Item Market"},{"id":"forum","name":"Forum posts"},{"id":"wiki","name":"Wiki"}]},"advancedSearch":{"optionsList":{"gender":[{"id":"Male","name":"Male"},{"id":"Female","name":"Female"},{"id":"Enby","name":"Enby"}],"properties":[{"id":"Shack","name":"Shack"},{"id":"Trailer","name":"Trailer"},{"id":"Apartment","name":"Apartment"},{"id":"Semi-Detached House","name":"Semi Detached house"},{"id":"Detached House","name":"Detached house"},{"id":"Beach House","name":"Beach house"},{"id":"Chalet","name":"Chalet"},{"id":"Villa","name":"Villa"},{"id":"Penthouse","name":"Penthouse"},{"id":"Mansion","name":"Mansion"},{"id":"Ranch","name":"Ranch"},{"id":"Palace","name":"Palace"},{"id":"Castle","name":"Castle"},{"id":"Private Island","name":"Private island"}],"searchConditions":[{"id":"married","name":"Married"},{"id":"travelling","name":"Traveling"},{"id":"inFaction","name":"In a faction"},{"id":"inCompany","name":"In a company"},{"id":"inHospital","name":"In hospital"},{"id":"inJail","name":"In jail"},{"id":"inFederalJail","name":"In Federal jail"}],"lastAction":[{"id":1,"name":"0 - 15 min"},{"id":2,"name":"15 min - 1 hour"},{"id":3,"name":"1 hour - 1 day"},{"id":4,"name":"1 day - 1 week"},{"id":5,"name":"1 week - 1 month"},{"id":6,"name":"1 month - 1 year"},{"id":7,"name":"longer than 1 year ago"}]}},"headlines":[]}</script><div id="header-root"></div>
+
+
+<link href="/builds/header/app.51b6ca7d9bd98832fe09.css" rel="stylesheet" />
+
+
+<script type="text/javascript" src="/builds/header/runtime.f7d8207cd66cdf7f309d.js"></script>
+
+<script type="text/javascript" src="/builds/header/vendors.27d488a1da732fed1328.js"></script>
+
+<script type="text/javascript" src="/builds/header/app.b48806c6aa5213a163e2.js"></script>
+
+<div class='content responsive-sidebar-container logged-in'>
+                <div class='container' id='mainContainer'><div id="sidebarroot"></div>
+
+
+<link href="/builds/sidebar/app.6283194a736911656c2d.css" rel="stylesheet" />
+
+
+<script type="text/javascript" src="/builds/sidebar/runtime.b058b014eecc417fe636.js"></script>
+
+<script type="text/javascript" src="/builds/sidebar/vendors.b71b8344136ae93c4eb9.js"></script>
+
+<script type="text/javascript" src="/builds/sidebar/app.347dbd689b1e59f5ac59.js"></script>
+
+<div class="content-wrapper winter  " role="main"><div style='display: none' id='websocketConnectionData'>{"url":"wss:\/\/ws-centrifugo.torn.com","userID":"3028329","timestamp":1772373410,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIzMDI4MzI5In0.xcmfxQF43UVw-a9wzKG_1rbcZp3hLy37724gT2tuduo","channel":"cfb85738a94059f61bd68a63302f04aa0fc16038652239f08fc7e2c93eefdd9da328d79530d54f47835357463232900cd2fde1177234e9a6c602f862ea9aae49","playername":"Zedtrooper"}</div><script type="text/javascript" src="/js/script/src/city_global/static_data/city_territories_shapes.js?v=1748278810"></script>
+          <div class="content-title m-bottom10">
+            <h4 id="skip-to-content" class="left">
+                City
+            </h4>
+        <div class="links-top-wrap ">
+                      <div class="torn-divider divider-vertical"></div>
+                      <a href="#" id="top-page-links-button" class="links-top-arrow wai-btn" aria-label="Top page links">
+                            <span class="page-links-triangle"></span>
+                      </a>
+                      <div class="torn-divider divider-vertical divider-right"></div>
+                      <div id="top-page-links-list" class="content-title-links" role="list" aria-labelledby="top-page-links-button">
+                   <button aria-label="show tutorial" class="tutorial-switcher c-pointer line-h24  right" id="1">
+			         <span class="tutorial-icon-svg tutorial-icon-show">
+			           <svg xmlns="http://www.w3.org/2000/svg" viewBox="-1 0 11.43 17" style=" width: 16px; height: 15px; "><defs><style>.cls-1{opacity:0.35;}.cls-2{fill:#fff;}.cls-3{fill:#777;}</style></defs><g id="Слой_2" data-name="Слой 2"><g id="icons"><g class="cls-1"><path class="cls-2" d="M7.92,13.72c0-3.49,3.78-4.6,3.49-8.07C11.24,3.46,9.72,1,5.71,1S.19,3.46,0,5.65c-.29,3.47,3.49,4.58,3.49,8.07Zm-6.17-8c.16-2.08,1.61-3.13,4-3.13s3.8,1,4,3.13c.1,1.14-.57,1.9-1.47,3.15a10,10,0,0,0-1.82,3.4H5a10,10,0,0,0-1.82-3.4C2.32,7.67,1.65,6.91,1.75,5.77ZM3.42,16.33A4,4,0,0,0,5.71,17,4,4,0,0,0,8,16.33V14.68H3.42Z"/></g><path class="cls-3" d="M7.92,12.72c0-3.49,3.78-4.6,3.49-8.07C11.24,2.46,9.72,0,5.71,0S.19,2.46,0,4.65c-.29,3.47,3.49,4.58,3.49,8.07Zm-6.17-8c.16-2.08,1.61-3.13,4-3.13s3.8,1.05,4,3.13c.1,1.14-.57,1.9-1.47,3.15a10,10,0,0,0-1.82,3.4H5a10,10,0,0,0-1.82-3.4C2.32,6.67,1.65,5.91,1.75,4.77ZM3.42,15.33A4,4,0,0,0,5.71,16,4,4,0,0,0,8,15.33V13.68H3.42Z"/></g></g></svg>
+
+			         </span>
+			         <span>Tutorial</span>
+                   </button>
+                
+	                   </div>
+	               </div><div class="clear"></div>
+            <hr class="page-head-delimiter" />
+	     </div>
+	<div class="tutorial-cont m-top10" style='display: none;'>
+	   <div class="title-gray top-round" role="heading" aria-level="5">
+		<span class="tutorial-outcome-svg-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="#cfcfcf" width="15px" height="16px" viewBox="0 0 11.43 17">
+    <path d="M7.92,12.72c0-3.49,3.78-4.6,3.49-8.07C11.24,2.46,9.72,0,5.71,0S.19,2.46,0,4.65c-.29,3.47,3.49,4.58,3.49,8.07Zm-6.17-8c.16-2.08,1.61-3.13,4-3.13s3.8,1.05,4,3.13c.1,1.14-.57,1.9-1.47,3.15a10,10,0,0,0-1.82,3.4H5a10,10,0,0,0-1.82-3.4C2.32,6.67,1.65,5.91,1.75,4.77ZM3.42,15.33A4,4,0,0,0,5.71,16,4,4,0,0,0,8,15.33V13.68H3.42Z"
+</svg>
+</span>
+		<span class="tutorial-title">City Tutorial</span>
+
+	   </div>
+	   <div class="tutorial-desc bottom-round cont-gray p10" tabindex="0">
+		<p>Here you can view all of the locations available to you in Torn City. The number of places can be quite overwhelming at first, but you should be able to find your way around in no time. Feel free to visit the areas and nose around. As you go up levels, you will unlock new areas.</p>
+			   </div>
+	   <hr class="page-head-delimiter m-top10" />
+	</div>
+	
+
+<a class="wai-links">City quick links tab</a>
+<a class="wai-links">City map tab</a>
+
+<div id="tab-menu" class="m-top10">
+
+    <ul class="torn-tabs tabs-dark">
+        <li class="active">
+            <a href="#map-cont">
+                <span>Map</span>
+            </a>
+        </li>
+        <li>
+            <a href="#quick-links">
+                <span>Quick Links</span>
+            </a>
+        </li>
+    </ul>
+
+    <h5 class="wai-links" aria-labelledby="ui-id-3">City map</h5>
+    <div id="map-cont" class="tab-menu-cont bottom-round" style="display: none;">
+        <div id="map">
+            <div class="map-loader-wp">
+                <div class="map-loader-bg"></div>
+                <span class="ajax-preloader preloader-dark p10"></span>
+            </div>
+        </div>
+
+        <div id ="full_screen" style="display: none; margin: 0 auto; position: relative;"></div>
+        <div id="_tui" style="display:none;"></div>
+
+        <hr class="page-head-delimiter m-top10 m-bottom10" />
+        <div class="title-black top-round">Key of Symbols</div>
+
+            <ul class="map-symbols cont-gray10 bottom-round">
+                <li class="left m-bottom5">
+                    <i class="map-icon-financial"></i>
+                    <span>Financial</span>
+                    <div class="torn-divider divider-vertical"></div>
+                    <div class="second torn-divider divider-vertical"></div>
+                </li>
+                <li class="left m-bottom5">
+                    <i class="map-icon-cannot-be-owned"></i>
+                    <span>Administrative</span>
+                </li>
+                <li class="left m-bottom5">
+                    <i class="map-icon-points-and-items-buildings"></i>
+                    <span>Shopping</span>
+                </li>
+                <li class="left">
+                    <i class="map-icon-shops"></i>
+                    <span>Leisure</span>
+                </li>
+                <li class="left">
+                    <i class="map-icon-miscellaneous"></i>
+                    <span>Real Estate</span>
+                </li>
+                <li class="left">
+                    <i class="map-icon-administrative"></i>
+                    <span>Miscellaneous</span>
+                </li>
+                <li class="clear"></li>
+            </ul>
+
+    </div>
+
+    <h5 class="wai-links" aria-labelledby="ui-id-2">City quick links</h5>
+    <div id="quick-links" class="tab-menu-cont bottom-round" style="display: none;">
+        <div id="react-root"></div>
+
+
+<link href="/builds/city-quick-links/app.bde76019ea20c447b00e.css" rel="stylesheet" />
+
+
+<script type="text/javascript" src="/builds/city-quick-links/runtime.4338ab85698d9215c590.js"></script>
+
+<script type="text/javascript" src="/builds/city-quick-links/vendors.51c7bdc8d91e98267163.js"></script>
+
+<script type="text/javascript" src="/builds/city-quick-links/app.ea6174cc7425f31d9b5a.js"></script>
+
+        <div class="clear"></div>        
+    </div>
+
+</div>
+<div class="clear"></div>
+                    </div>
+			   <div class="clear"></div>
+			</div>
+        </div>
+        <div class="footer">
+			<br/><br/>
+		</div><div id="react-profile-mini-root"></div>
+
+
+<link href="/builds/profile-mini/app.27a76b2fccb8423e14ca.css" rel="stylesheet" />
+
+
+<script type="text/javascript" src="/builds/profile-mini/runtime.546befd08dcedbb5e1a0.js"></script>
+
+<script type="text/javascript" src="/builds/profile-mini/vendors.1847ff5b45dff8e75197.js"></script>
+
+<script type="text/javascript" src="/builds/profile-mini/app.4b3121a37c903b8e95e2.js"></script>
+
+<div id="go-to-top-btn-root"></div>
+
+
+<link href="/builds/go-to-top/app.603b69d34ed9b4b8e062.css" rel="stylesheet" />
+
+
+<script type="text/javascript" src="/builds/go-to-top/runtime.28b210ecc34df3f17145.js"></script>
+
+<script type="text/javascript" src="/builds/go-to-top/vendors.98db7d15a0663196c924.js"></script>
+
+<script type="text/javascript" src="/builds/go-to-top/app.6a9f9a9ce3ec17987918.js"></script>
+
+
+    <link href="/builds/attacking-effects/app.01027d8d7349cc6eef85.css" rel="stylesheet" />
+
+
+    <script type="text/javascript" src="/builds/attacking-effects/runtime.e498958a7a899933744c.js"></script>
+
+    <script type="text/javascript" src="/builds/attacking-effects/app.4434428c85be61dbd7bb.js"></script>
+
+<script nonce="NGJhNmM0ZmQwOWI5MWYxYmY5NzBhZTdjNGYwNjYyMGRmZGY5NDM4NWQ1ZGRiMmE5ZThiZGI4NTJiZjEyMWJkZA==">(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.nonce='NGJhNmM0ZmQwOWI5MWYxYmY5NzBhZTdjNGYwNjYyMGRmZGY5NDM4NWQ1ZGRiMmE5ZThiZGI4NTJiZjEyMWJkZA==';d.innerHTML="window.__CF$cv$params={r:'9d58aad6edc68002',t:'MTc3MjM3MzQxMC4wMDAwMDA='};var a=document.createElement('script');a.nonce='NGJhNmM0ZmQwOWI5MWYxYmY5NzBhZTdjNGYwNjYyMGRmZGY5NDM4NWQ1ZGRiMmE5ZThiZGI4NTJiZjEyMWJkZA==';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+		</html>
