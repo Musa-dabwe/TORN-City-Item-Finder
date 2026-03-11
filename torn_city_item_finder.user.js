@@ -45,8 +45,8 @@
         }
 
         .x_city_find:hover {
-            width: 150px !important;
-            height: 150px !important;
+            width: 100px !important;
+            height: 100px !important;
             margin-left: -75px !important;
             margin-top: -75px !important;
             z-index: 1000 !important;
