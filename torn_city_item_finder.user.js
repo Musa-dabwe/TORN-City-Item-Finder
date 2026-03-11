@@ -288,6 +288,16 @@
         return tooltip;
     }
 
+    function removeItem(node) {
+        if (node.tagName === 'IMG' && node.src.includes('torn.com/images/items/')) {
+            const index = found_items_data.findIndex(i => i.element === node);
+            if (index > -1) {
+                found_items_data.splice(index, 1);
+                updateCountButton();
+            }
+        }
+    }
+
     function handleItem(node) {
         if (node.tagName === 'IMG' && node.src.includes('torn.com/images/items/')) {
             node.src = node.src.replace('small.png', 'large.png');
@@ -444,6 +454,12 @@
                 handleItem(node);
                 if (node.querySelectorAll) {
                     node.querySelectorAll('img').forEach(handleItem);
+                }
+            }
+            for (const node of mutation.removedNodes) {
+                removeItem(node);
+                if (node.querySelectorAll) {
+                    node.querySelectorAll('img').forEach(removeItem);
                 }
             }
         }
