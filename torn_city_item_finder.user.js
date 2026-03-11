@@ -31,34 +31,43 @@
     GM_addStyle(`
         .x_city_find {
             box-sizing: border-box;
-            box-shadow: rgb(0, 255, 0) 0px 0px 20px 10px;
+            box-shadow: 0 0 10px 2px #00ff88;
+            border: 2px solid #00ff88 !important;
             display: block !important;
             width: 40px !important;
             height: 40px !important;
-            left: -20px !important;
-            top: -20px !important;
+            margin-left: -20px !important;
+            margin-top: -20px !important;
             z-index: 999 !important;
-            padding: 10px 0px;
-            border-radius: 100%;
-            background: rgba(18, 71, 7, 0.5);
-            transition: all 50ms cubic-bezier(0.65, 0.05, 0.36, 1);
-            animation: x-fade-in 500ms ease-out backwards, x-pulsate 1.5s infinite;
-        }
-
-        @keyframes x-pulsate {
-            0% { transform: scale(1); opacity: 0.8; }
-            50% { transform: scale(1.2); opacity: 1; }
-            100% { transform: scale(1); opacity: 0.8; }
+            border-radius: 100% !important;
+            background: rgba(0, 255, 136, 0.2) !important;
+            transition: width 150ms, height 150ms, margin 150ms;
         }
 
         .x_city_find:hover {
             width: 150px !important;
             height: 150px !important;
-            left: -75px !important;
-            top: -75px !important;
+            margin-left: -75px !important;
+            margin-top: -75px !important;
             z-index: 1000 !important;
-            padding: 37.5px 0px;
-            background: black;
+            background: rgba(0, 255, 136, 0.4) !important;
+        }
+
+        .x-item-tooltip {
+            position: fixed;
+            background: rgba(0, 0, 0, 0.9);
+            color: #00ff88;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: bold;
+            z-index: 10002;
+            pointer-events: none;
+            border: 1px solid #00ff88;
+            white-space: nowrap;
+            transform: translate(-50%, -100%);
+            display: none;
+            box-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
         }
 
         #x_type_toggles {
@@ -154,8 +163,9 @@
 
     let x_active_toggles = JSON.parse(localStorage.getItem('x_active_toggles')) || type_list.concat(['All']);
     let item_types_present = [];
-    let found_items_data = []; // Stores { id, type }
+    let found_items_data = []; // Stores { id, type, element }
     let cached_item_prices = JSON.parse(localStorage.getItem('x_item_prices')) || {};
+    let cached_item_names = JSON.parse(localStorage.getItem('x_item_names')) || {};
     let last_price_update = localStorage.getItem('x_last_price_update') || 0;
 
     function showToast(message) {
@@ -200,10 +210,10 @@
         };
     }
 
-    function fetchItemPrices(apiKey, callback) {
+    function fetchItemData(apiKey, callback) {
         const now = Date.now();
-        if (now - last_price_update < 3600000 && Object.keys(cached_item_prices).length > 0) {
-            if (callback) callback(cached_item_prices);
+        if (now - last_price_update < 3600000 && Object.keys(cached_item_prices).length > 0 && Object.keys(cached_item_names).length > 0) {
+            if (callback) callback({ prices: cached_item_prices, names: cached_item_names });
             return;
         }
 
@@ -214,13 +224,17 @@
                 const data = JSON.parse(response.responseText);
                 if (data.items) {
                     const prices = {};
+                    const names = {};
                     for (const id in data.items) {
                         prices[id] = data.items[id].market_value;
+                        names[id] = data.items[id].name;
                     }
                     cached_item_prices = prices;
+                    cached_item_names = names;
                     localStorage.setItem('x_item_prices', JSON.stringify(prices));
+                    localStorage.setItem('x_item_names', JSON.stringify(names));
                     localStorage.setItem('x_last_price_update', now);
-                    if (callback) callback(prices);
+                    if (callback) callback({ prices: prices, names: names });
                 } else if (data.error) {
                     showToast("API Error: " + data.error.error);
                 }
@@ -237,11 +251,11 @@
             return;
         }
 
-        fetchItemPrices(apiKey, (prices) => {
+        fetchItemData(apiKey, (data) => {
             let total = 0;
             found_items_data.forEach(item => {
                 if (x_active_toggles.includes(item.type) || x_active_toggles.includes('All')) {
-                    total += prices[item.id] || 0;
+                    total += data.prices[item.id] || 0;
                 }
             });
             showToast(`Total Value: $${total.toLocaleString()}`);
@@ -264,6 +278,16 @@
         }
     }
 
+    let tooltip = null;
+    function getTooltip() {
+        if (!tooltip) {
+            tooltip = document.createElement('div');
+            tooltip.className = 'x-item-tooltip';
+            document.body.appendChild(tooltip);
+        }
+        return tooltip;
+    }
+
     function handleItem(node) {
         if (node.tagName === 'IMG' && node.src.includes('torn.com/images/items/')) {
             node.src = node.src.replace('small.png', 'large.png');
@@ -280,6 +304,26 @@
 
             if (!found_items_data.find(i => i.element === node)) {
                 found_items_data.push({ id: itemID, type: itemType, element: node });
+
+                node.addEventListener('mouseenter', (e) => {
+                    const tt = getTooltip();
+                    const itemName = cached_item_names[itemID] || itemType || "Unknown Item";
+                    tt.textContent = itemName;
+                    tt.style.display = 'block';
+                    updateTooltipPos(node, tt);
+                });
+
+                node.addEventListener('mouseleave', () => {
+                    const tt = getTooltip();
+                    tt.style.display = 'none';
+                });
+
+                node.addEventListener('mousemove', () => {
+                    const tt = getTooltip();
+                    if (tt.style.display === 'block') {
+                        updateTooltipPos(node, tt);
+                    }
+                });
             }
 
             if (item_types_present.indexOf(itemType) < 0) {
@@ -289,6 +333,12 @@
             }
             updateCountButton();
         }
+    }
+
+    function updateTooltipPos(target, tt) {
+        const rect = target.getBoundingClientRect();
+        tt.style.left = `${rect.left + rect.width / 2}px`;
+        tt.style.top = `${rect.top - 10}px`;
     }
 
     function initUI() {
