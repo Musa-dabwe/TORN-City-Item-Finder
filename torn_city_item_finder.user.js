@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Torn City Item Finder
-// @version      1.0
+// @version      1.1
 // @description  Detects and highlights items on the Torn city map, showing total value and allowing filtering.
 // @author       Zedtrooper [3028329] (Original by tos)
 // @match        *.torn.com/city.php*
